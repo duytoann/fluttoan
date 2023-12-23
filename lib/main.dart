@@ -1,24 +1,8 @@
-import 'package:FlutCombine/start_screen.dart';
+import 'package:FlutCombine/screen/quiz.dart';
+import 'package:FlutCombine/screen/start_screen.dart';
+import 'package:FlutCombine/style/box_decoration_style.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      home: Scaffold(
-        body: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Colors.lightGreen,
-                Colors.lightBlue,
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-          child: const StartScreen(),
-        ),
-      ),
-    ),
-  );
+  runApp(const Quiz());
 }

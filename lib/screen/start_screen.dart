@@ -1,6 +1,6 @@
-import 'package:FlutCombine/style/styled_button.dart';
-import 'package:FlutCombine/style/styled_image.dart';
-import 'package:FlutCombine/style/styled_text.dart';
+import 'package:FlutCombine/widgets/styled_button.dart';
+import 'package:FlutCombine/widgets/styled_image.dart';
+import 'package:FlutCombine/widgets/styled_text.dart';
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
