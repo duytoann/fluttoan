@@ -8,6 +8,7 @@ class StyledImage extends StatelessWidget {
     return Image.asset(
       'assets/images/quiz-logo.png',
       width: 200,
+      color: const Color.fromARGB(142, 245, 244, 244),
     );
   }
 }
