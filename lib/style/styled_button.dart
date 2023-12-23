@@ -9,21 +9,28 @@ class StyledButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OutlinedButton(
+    return OutlinedButton.icon(
       onPressed: styledButtonClicked,
       style: OutlinedButton.styleFrom(
+        backgroundColor: Colors.lightBlue,
         textStyle: const TextStyle(
           backgroundColor: Colors.blue,
         ),
         side: const BorderSide(
-          color: Colors.black,
+          color: Colors.white,
         ),
       ),
-      child: const Text(
+      icon: const Icon(
+        Icons.keyboard_arrow_right_sharp,
+        color: Colors.white,
+        size: 20,
+      ),
+      label: const Text(
         'Start Quiz',
         style: TextStyle(
-          color: Colors.black,
+          color: Colors.white,
           backgroundColor: Colors.transparent,
+          fontSize: 20,
         ),
       ),
     );
