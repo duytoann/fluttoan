@@ -4,23 +4,50 @@ import 'package:FlutCombine/widgets/styled_text.dart';
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen({super.key});
+  const StartScreen(this.startQuiz, {super.key});
+
+  final void Function() startQuiz;
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          StyledImage(),
-          SizedBox(
+          const StyledImage(),
+          const SizedBox(
             height: 80,
           ),
-          StyledText(),
-          SizedBox(
+          const StyledText(),
+          const SizedBox(
             height: 80,
           ),
-          StyledButton(),
+          // StyledButton(),
+          OutlinedButton.icon(
+            onPressed: startQuiz,
+            style: OutlinedButton.styleFrom(
+              backgroundColor: Colors.lightBlue,
+              textStyle: const TextStyle(
+                backgroundColor: Colors.blue,
+              ),
+              side: const BorderSide(
+                color: Colors.white,
+              ),
+            ),
+            icon: const Icon(
+              Icons.keyboard_arrow_right_sharp,
+              color: Colors.white,
+              size: 20,
+            ),
+            label: const Text(
+              'Start Quiz',
+              style: TextStyle(
+                color: Colors.white,
+                backgroundColor: Colors.transparent,
+                fontSize: 20,
+              ),
+            ),
+          )
         ],
       ),
     );

@@ -11,21 +11,26 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  Widget activeScreen = const StartScreen(); // var & specific type !!!
+  var activeScreen = 'start-screen';
 
   void switchScreen() {
     setState(() {
-      activeScreen = const QuestionScreen();
+      activeScreen = 'questions-screen';
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    Widget screenWidget = StartScreen(switchScreen);
+
+    if(activeScreen == 'questions-screen') {
+      screenWidget = const QuestionScreen();
+    }
     return MaterialApp(
       home: Scaffold(
         body: Container(
           decoration: BoxDecorationStyle.boxDecoration,
-          child: const StartScreen(),
+          child: screenWidget,
         ),
       ),
     );
