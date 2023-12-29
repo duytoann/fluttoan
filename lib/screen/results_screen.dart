@@ -1,7 +1,27 @@
+import 'package:FlutCombine/data/questions.dart';
+import 'package:FlutCombine/widgets/question_summary.dart';
 import 'package:flutter/material.dart';
 
 class ResultsScreen extends StatelessWidget {
-  const ResultsScreen({super.key});
+  const ResultsScreen({super.key, required this.chosenAnswers});
+
+  final List<String> chosenAnswers;
+
+  List<Map<String, Object>> getSummaryData() {
+    final List<Map<String, Object>> summaryData = [];
+
+    for (int i = 0; i < chosenAnswers.length; i++) {
+      summaryData.add(
+        {
+          'question_index': i,
+          'question': questions[i].text,
+          'correct_answer': questions[i].answer[0],
+          'user_answer': chosenAnswers[i],
+        },
+      );
+    }
+    return summaryData;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +39,7 @@ class ResultsScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            const Text(
-              'List of answers and questions',
-            ),
+            QuestionSummary(getSummaryData()),
             const SizedBox(
               height: 30,
             ),
